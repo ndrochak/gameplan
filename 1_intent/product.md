@@ -8,26 +8,23 @@ community.
 
 ## Desired Outcomes
 
-- [Outcome 1]
-- [Outcome 2]
-- [Outcome 3]
+- Gamers arrive at conventions with a personalized game schedule that maximizes their time and minimizes conflicts, so they spend their weekend playing games instead of searching for them.
+- Hosts know exactly how many players are committed to their games before the convention starts, reducing no-shows and enabling them to prepare the right number of copies, rule summaries, and materials.
+- Conventions eliminate scheduling conflicts and double-bookings, so attendees can commit to games with confidence and organizers can run reliable, conflict-free schedules at scale.
+- First-time convention attendees feel empowered to host games because they can see demand and coordinate players effortlessly, lowering the barrier to participation.
 
 ## Anti-Goals
 
-- [Anti-goal 1]
-- [Anti-goal 2]
-- [Anti-goal 3]
+- Not a social network for gamers
 
 ## Success Indicators
 
-- [Metric name: target]
-- [Metric name: target]
-- [Metric name: target]
+- Participation in hosted games: 90% of games have at least one participant (besided the host)
 
 ## Assumptions
 
-- [Assumption to validate]
+- None so far
 
 ## Open Questions
 
-- [Question needing clarification]
+- None so far
