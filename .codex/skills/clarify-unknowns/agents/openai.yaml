@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clarify Unknowns"
+  short_description: "Resolve feature unknowns into intent"
+  default_prompt: "Use $clarify-unknowns to resolve unknowns in this feature intent and update the feature description."

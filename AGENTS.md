@@ -92,6 +92,22 @@ After implementation:
 
 ## Agent Behavior
 
+## Template Retention Rule
+
+Template files are durable reference artifacts and must remain in the
+repository.
+
+Do not:
+
+- delete template files
+- rename template files in a way that breaks discoverability
+
+Always:
+
+- keep existing templates available for reference
+- supersede templates by adding a new version rather than removing prior ones
+- mark older templates as deprecated when needed, but retain them in-repo
+
 Do not:
 
 - invent requirements
