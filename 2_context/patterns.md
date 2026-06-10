@@ -20,4 +20,4 @@
 
 ## Additional Patterns
 
-- [Pattern name]: [when to use]
+- [Pattern name: when to use]

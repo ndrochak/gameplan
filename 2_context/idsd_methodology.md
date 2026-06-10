@@ -2,13 +2,15 @@
 
 ## Purpose
 
-This document summarizes the Intent → Context → Expectations (ICE) methodology, inspired by Intent-Driven Software Development (IDSD).
+This document summarizes the Intent → Context → Expectations (ICE)
+methodology, inspired by Intent-Driven Software Development (IDSD).
 
-Agents should use this document as operating context before planning or implementing work.
+Agents should use this document as operating context before planning or
+implementing work.
 
 ---
 
-# Core Principle
+## Core Principle
 
 Traditional specification-driven development attempts to describe both:
 
@@ -30,11 +32,12 @@ Agents determine:
 * execution strategy
 * task sequencing
 
-The goal is to maximize agent autonomy while maintaining alignment with business objectives.
+The goal is to maximize agent autonomy while maintaining alignment with
+business objectives.
 
 ---
 
-# Intent
+## Intent
 
 Intent describes the outcome that should exist after the work is complete.
 
@@ -53,17 +56,19 @@ Good Intent:
 
 Poor Intent:
 
-> Build a React page with an email field that calls an API endpoint and sends a password reset token.
+> Build a React page with an email field that calls an API endpoint and sends a
+> password reset token.
 
 The first describes the desired outcome.
 
 The second describes a specific implementation.
 
-When implementation appears in Intent, agents may become constrained to suboptimal solutions.
+When implementation appears in Intent, agents may become constrained to
+suboptimal solutions.
 
 ---
 
-# Context
+## Context
 
 Context describes reality.
 
@@ -91,11 +96,12 @@ Agents should actively search context before proposing solutions.
 
 Context is not static.
 
-When agents discover important information during implementation, they should recommend updates to the context repository.
+When agents discover important information during implementation, they should
+recommend updates to the context repository.
 
 ---
 
-# Expectations
+## Expectations
 
 Expectations define success.
 
@@ -120,7 +126,7 @@ Expectations should be objective whenever possible.
 
 ---
 
-# Agent Decision Hierarchy
+## Agent Decision Hierarchy
 
 When conflicts occur:
 
@@ -142,7 +148,7 @@ An implementation that satisfies Intent but ignores Context is likely harmful.
 
 ---
 
-# Agent Workflow
+## Agent Workflow
 
 Before implementation:
 
@@ -169,7 +175,7 @@ After implementation:
 
 ---
 
-# What Agents Should Do
+## What Agents Should Do
 
 Agents should:
 
@@ -185,7 +191,7 @@ Agents should act like experienced engineers operating with business awareness.
 
 ---
 
-# What Agents Should Avoid
+## What Agents Should Avoid
 
 Agents should not:
 
@@ -203,31 +209,31 @@ The goal is to maximize successful outcomes.
 
 ---
 
-# Planning Guidance
+## Planning Guidance
 
 When given a task, agents should first produce:
 
-## Intent Summary
+### Intent Summary
 
 A concise explanation of the desired outcome.
 
-## Relevant Context
+### Relevant Context
 
 Applicable architecture, constraints, patterns, and prior decisions.
 
-## Expectations
+### Applicable Expectations
 
 Acceptance criteria and quality requirements.
 
-## Proposed Approach
+### Proposed Approach
 
 Recommended implementation strategy.
 
-## Risks
+### Risks
 
 Potential technical or business concerns.
 
-## Questions
+### Questions
 
 Unknowns that may require clarification.
 
@@ -235,7 +241,7 @@ Only after these are understood should implementation begin.
 
 ---
 
-# Definition of Success
+## Definition of Success
 
 Successful work demonstrates all of the following:
 
@@ -246,6 +252,7 @@ Successful work demonstrates all of the following:
 * Knowledge captured
 * Future maintainability improved
 
-Implementation quality is judged by outcomes rather than adherence to a predetermined specification.
+Implementation quality is judged by outcomes rather than adherence to a
+predetermined specification.
 
 This is the central idea of Intent → Context → Expectations.

@@ -2,8 +2,8 @@
 
 ## Required
 
-- [Required test type]: [scope]
-- [Required test type]: [scope]
+- [Required test type: scope]
+- [Required test type: scope]
 
 ## Coverage Expectations
 

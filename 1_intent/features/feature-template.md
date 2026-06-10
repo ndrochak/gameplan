@@ -2,10 +2,10 @@
 
 ## Metadata
 
-- Feature Name: [name]
-- Owner: [team or person]
-- Status: [draft | proposed | approved]
-- Last Updated: [YYYY-MM-DD]
+- [Feature Name: name]
+- [Owner: team or person]
+- [Status: draft | proposed | approved]
+- [Last Updated: YYYY-MM-DD]
 
 ## Problem
 

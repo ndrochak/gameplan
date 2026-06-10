@@ -1,8 +1,10 @@
-# Product Intent Template
+# Product Intent
 
 ## Mission
 
-[Describe why this product exists.]
+We connect board gamers with the games and people they want to play with at
+conventions, turning scheduling from a pain point into an opportunity for
+community.
 
 ## Desired Outcomes
 
@@ -18,9 +20,9 @@
 
 ## Success Indicators
 
-- [Metric name]: [target]
-- [Metric name]: [target]
-- [Metric name]: [target]
+- [Metric name: target]
+- [Metric name: target]
+- [Metric name: target]
 
 ## Assumptions
 

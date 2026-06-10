@@ -2,10 +2,10 @@
 
 ## Metadata
 
-- Work Item: [name]
-- Owner: [team or person]
-- Date: [YYYY-MM-DD]
-- Status: [draft | proposed | approved]
+- [Work Item: name]
+- [Owner: team or person]
+- [Date: YYYY-MM-DD]
+- [Status: draft | proposed | approved]
 
 ## Intent Reviewed
 

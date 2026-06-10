@@ -6,9 +6,9 @@
 
 ## Major Components
 
-- [Component]: [purpose]
-- [Component]: [purpose]
-- [Component]: [purpose]
+- [Component: purpose]
+- [Component: purpose]
+- [Component: purpose]
 
 ## Boundaries
 

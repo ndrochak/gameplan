@@ -1,6 +1,9 @@
 # Agent Operating Model
 
-This repository follows the Intent → Context → Expectations (ICE) methodology, as defined in [`2_context/idsd_methodology.md`](2_context/idsd_methodology.md). Read that document before beginning any work.
+This repository follows the Intent → Context → Expectations (ICE)
+methodology, as defined in
+[`2_context/idsd_methodology.md`](2_context/idsd_methodology.md). Read that
+document before beginning any work.
 
 Never begin with implementation.
 
@@ -32,13 +35,14 @@ All work items are tracked as files under `work/`.
 
 ### Lifecycle
 
-```
+```text
 work/1_proposed/<item>.md   →   work/2_completed/<item>.md
 ```
 
 **Step 1 — Propose** (`work/1_proposed/`)
 
-Create a proposal file before any implementation begins. Use the template at `work/1_proposed/feature-x.md`. The file must capture:
+Create a proposal file before any implementation begins. Use the template at
+`work/1_proposed/feature-x.md`. The file must capture:
 
 - Intent reviewed (reference `1_intent/`)
 - Relevant context (reference `2_context/`)
@@ -46,11 +50,14 @@ Create a proposal file before any implementation begins. Use the template at `wo
 - Proposed approach
 - Risks and open questions
 
-An agent must not begin implementation until a proposal file exists and has been approved.
+An agent must not begin implementation until a proposal file exists and has
+been approved.
 
 **Step 2 — Complete** (`work/2_completed/`)
 
-When implementation is finished, create a completion report in `work/2_completed/` using the template at `work/2_completed/feature-x.md`. The file must capture:
+When implementation is finished, create a completion report in
+`work/2_completed/` using the template at `work/2_completed/feature-x.md`. The
+file must capture:
 
 - Outcome delivered
 - Expectations validation (pass/partial/fail per `3_expectations/` category)
@@ -58,7 +65,8 @@ When implementation is finished, create a completion report in `work/2_completed
 - Recommended updates to `2_context/`
 - Follow-up work identified
 
-Recommended context updates must be applied to the relevant files in `2_context/` before the work item is considered closed.
+Recommended context updates must be applied to the relevant files in
+`2_context/` before the work item is considered closed.
 
 ## Required Deliverables
 

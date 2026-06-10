@@ -6,20 +6,20 @@
 
 ## Core Concepts
 
-- [Concept]: [definition]
-- [Concept]: [definition]
+- [Concept: definition]
+- [Concept: definition]
 
 ## Actors
 
-- [Actor]: [goals/responsibilities]
+- [Actor: goals/responsibilities]
 
 ## Key Workflows
 
-- [Workflow name]: [summary]
+- [Workflow name: summary]
 
 ## Terminology
 
-- [Term]: [meaning]
+- [Term: meaning]
 
 ## Domain Constraints
 

@@ -17,7 +17,7 @@
 
 ## Performance
 
-- [Metric]: [target threshold]
+- [Metric: target threshold]
 
 ## Resource Constraints
 

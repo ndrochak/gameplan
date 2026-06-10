@@ -2,9 +2,9 @@
 
 ## Metadata
 
-- Work Item: [name]
-- Owner: [team or person]
-- Completion Date: [YYYY-MM-DD]
+- [Work Item: name]
+- [Owner: team or person]
+- [Completion Date: YYYY-MM-DD]
 
 ## Outcome
 
