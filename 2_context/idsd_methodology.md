@@ -213,6 +213,23 @@ The goal is to maximize successful outcomes.
 
 When given a task, agents should first produce:
 
+## Artifact Ownership (Avoid Redundancy)
+
+Intent artifacts (`1_intent/`) are the durable source of truth for outcomes and
+business framing.
+
+Work artifacts (`work/1_proposed/`, `work/2_completed/`) are lifecycle records
+for a specific change.
+
+To avoid redundancy:
+
+* work proposals should reference intent, not restate it in full
+* completion reports should validate expectations and record discoveries
+* intent files should not be used as approval or completion trackers
+
+When details overlap, keep full detail in the primary artifact and link from
+the secondary artifact.
+
 ### Intent Summary
 
 A concise explanation of the desired outcome.

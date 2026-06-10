@@ -33,6 +33,10 @@ Expectations define acceptance.
 
 All work items are tracked as files under `work/`.
 
+Intent documents under `1_intent/` are durable outcome references.
+They are not execution lifecycle trackers and must not duplicate proposal or
+completion status.
+
 ### Lifecycle
 
 ```text
@@ -42,9 +46,10 @@ work/1_proposed/<item>.md   →   work/2_completed/<item>.md
 **Step 1 — Propose** (`work/1_proposed/`)
 
 Create a proposal file before any implementation begins. Use the template at
-`work/1_proposed/feature-x.md`. The file must capture:
+`work/1_proposed/_proposed_feature-template.md`. The file must capture:
 
-- Intent reviewed (reference `1_intent/`)
+- Intent reference (link to `1_intent/` source of truth)
+- Intent delta (only what is specific to this work item, if needed)
 - Relevant context (reference `2_context/`)
 - Expectations that apply (reference `3_expectations/`)
 - Proposed approach
@@ -56,8 +61,8 @@ been approved.
 **Step 2 — Complete** (`work/2_completed/`)
 
 When implementation is finished, create a completion report in
-`work/2_completed/` using the template at `work/2_completed/feature-x.md`. The
-file must capture:
+`work/2_completed/` using the template at
+`work/2_completed/_completed_feature-template.md`. The file must capture:
 
 - Outcome delivered
 - Expectations validation (pass/partial/fail per `3_expectations/` category)
@@ -73,7 +78,7 @@ Recommended context updates must be applied to the relevant files in
 Before significant implementation:
 
 - proposal file in `work/1_proposed/`
-- problem summary
+- intent reference
 - discovered constraints
 - implementation approach
 - risks

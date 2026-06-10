@@ -5,6 +5,8 @@
 - [Work Item: name]
 - [Owner: team or person]
 - [Completion Date: YYYY-MM-DD]
+- [Proposal: `work/1_proposed/<item>.md`]
+- [Intent: `1_intent/...`]
 
 ## Outcome
 

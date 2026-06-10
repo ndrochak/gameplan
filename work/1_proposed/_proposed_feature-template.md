@@ -7,9 +7,13 @@
 - [Date: YYYY-MM-DD]
 - [Status: draft | proposed | approved]
 
-## Intent Reviewed
+## Intent Reference
 
-[Summarize the desired outcome from intent documentation.]
+- [Primary intent doc in `1_intent/`]
+
+## Intent Delta (Optional)
+
+[Only work-item-specific additions or constraints not already captured in intent.]
 
 ## Relevant Context
 
