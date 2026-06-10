@@ -1,6 +1,6 @@
 # Agent Operating Model
 
-This repository follows the Intent → Context → Expectations methodology.
+This repository follows the Intent → Context → Expectations (ICE) methodology, as defined in [`2_context/idsd_methodology.md`](2_context/idsd_methodology.md). Read that document before beginning any work.
 
 Never begin with implementation.
 
