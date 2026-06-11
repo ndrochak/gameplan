@@ -5,7 +5,7 @@
 - Work Item: expectation-boundary-cleanup
 - Owner: Codex
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/expectation-boundary-cleanup.md`
+- Proposal: `work/1_proposed/20260610-007-expectation-boundary-cleanup.md`
 - Intent: `1_intent/product.md`, `1_intent/features/001-convention-creation.md`
 
 ## Outcome

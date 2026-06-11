@@ -5,7 +5,7 @@
 - Work Item: api-hardening-and-idiomatic-cleanup
 - Owner: Codex
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/api-hardening-and-idiomatic-cleanup.md`
+- Proposal: `work/1_proposed/20260610-012-api-hardening-and-idiomatic-cleanup.md`
 - Intent: `1_intent/product.md`, `1_intent/features/001-convention-creation.md`
 
 ## Outcome

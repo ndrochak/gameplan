@@ -5,7 +5,7 @@
 - Work Item: patterns-template-scope-guidance
 - Owner: Codex
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/patterns-template-scope-guidance.md`
+- Proposal: `work/1_proposed/20260610-005-patterns-template-scope-guidance.md`
 - Intent: `1_intent/product.md`
 
 ## Outcome

@@ -6,7 +6,7 @@
 - Owner: Codex
 - Date: 2026-06-10
 - Status: completed
-- Completion Report: `work/2_completed/expectation-boundary-cleanup.md`
+- Completion Report: `work/2_completed/20260610-009-expectation-boundary-cleanup.md`
 
 ## Intent Reference
 

@@ -5,7 +5,7 @@
 - Work Item: human-approval-gate-rule
 - Owner: Codex
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/human-approval-gate-rule.md`
+- Proposal: `work/1_proposed/20260610-008-human-approval-gate-rule.md`
 - Intent: `1_intent/product.md`
 
 ## Outcome

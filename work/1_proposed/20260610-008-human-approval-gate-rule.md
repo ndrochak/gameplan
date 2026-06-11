@@ -7,7 +7,7 @@
 - Date: 2026-06-10
 - Status: completed
 - Approval Evidence: user replied "approved" after proposal creation
-- Completion Report: `work/2_completed/human-approval-gate-rule.md`
+- Completion Report: `work/2_completed/20260610-010-human-approval-gate-rule.md`
 
 ## Intent Reference
 

@@ -5,7 +5,7 @@
 - Work Item: Proposal Completion Status
 - Owner: Product
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/proposal-completion-status.md`
+- Proposal: `work/1_proposed/20260610-003-proposal-completion-status.md`
 - Intent: `1_intent/product.md`
 
 ## Outcome

@@ -6,7 +6,7 @@
 - Owner: Product
 - Date: 2026-06-10
 - Status: completed
-- Completion Report: `work/2_completed/proposal-completion-status.md`
+- Completion Report: `work/2_completed/20260610-004-proposal-completion-status.md`
 
 ## Intent Reference
 

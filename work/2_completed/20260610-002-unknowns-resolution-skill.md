@@ -5,7 +5,7 @@
 - Work Item: Unknowns Resolution Skill
 - Owner: Product
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/unknowns-resolution-skill.md`
+- Proposal: `work/1_proposed/20260610-001-unknowns-resolution-skill.md`
 - Intent: `1_intent/features/001-convention-creation.md`
 
 ## Outcome

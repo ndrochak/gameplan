@@ -227,6 +227,10 @@ business framing.
 Work artifacts (`work/1_proposed/`, `work/2_completed/`) are lifecycle records
 for a specific change.
 
+Use sortable work filenames so execution order is visible from directory
+listing: `YYYYMMDD-NNN-short-kebab-title.md`, with sequence assigned in
+historical git order.
+
 To avoid redundancy:
 
 * work proposals should reference intent, not restate it in full
@@ -238,7 +242,8 @@ the secondary artifact.
 
 Completed work should still be visible from the original proposal. Keep the
 proposal file in `work/1_proposed/`, update its status to `completed`, and add
-a link to the matching `work/2_completed/<item>.md` report. The proposal should
+a link to the matching
+`work/2_completed/YYYYMMDD-NNN-short-kebab-title.md` report. The proposal should
 not duplicate completion outcomes, validation details, discoveries, or
 follow-up work.
 

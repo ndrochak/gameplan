@@ -8,7 +8,7 @@
 - Status: completed
 - Approval Evidence: User said "proposal is approved" on 2026-06-10 and
   directed implementation to begin with approach step 1.
-- Completion Report: `work/2_completed/convention-creation.md`
+- Completion Report: `work/2_completed/20260610-014-convention-creation.md`
 
 ## Intent Reference
 

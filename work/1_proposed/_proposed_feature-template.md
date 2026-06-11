@@ -7,7 +7,12 @@
 - [Date: YYYY-MM-DD]
 - [Status: draft | proposed | approved | completed]
 - [Approval Evidence: human approval reference required before implementation]
-- [Completion Report: `work/2_completed/<item>.md` when status is completed]
+- [Completion Report:
+  `work/2_completed/YYYYMMDD-NNN-short-kebab-title.md` when status is
+  completed]
+
+Filename for this proposal should be:
+`work/1_proposed/YYYYMMDD-NNN-short-kebab-title.md`
 
 ## Intent Reference
 

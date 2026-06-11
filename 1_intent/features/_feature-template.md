@@ -38,5 +38,5 @@ completion evidence. Those belong in `work/` artifacts.
 
 ## Related Work Items
 
-- [Link to `work/1_proposed/<item>.md`]
-- [Link to `work/2_completed/<item>.md`]
+- [Link to `work/1_proposed/YYYYMMDD-NNN-short-kebab-title.md`]
+- [Link to `work/2_completed/YYYYMMDD-NNN-short-kebab-title.md`]

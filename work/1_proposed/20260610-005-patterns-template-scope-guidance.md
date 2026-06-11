@@ -6,7 +6,7 @@
 - Owner: Codex
 - Date: 2026-06-10
 - Status: completed
-- Completion Report: `work/2_completed/patterns-template-scope-guidance.md`
+- Completion Report: `work/2_completed/20260610-006-patterns-template-scope-guidance.md`
 
 ## Intent Reference
 

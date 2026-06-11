@@ -40,8 +40,22 @@ completion status.
 ### Lifecycle
 
 ```text
-work/1_proposed/<item>.md   →   work/2_completed/<item>.md
+work/1_proposed/YYYYMMDD-NNN-short-kebab-title.md
+  -> work/2_completed/YYYYMMDD-NNN-short-kebab-title.md
 ```
+
+Work filenames must use this sortable convention:
+
+```text
+YYYYMMDD-NNN-short-kebab-title.md
+```
+
+- `YYYYMMDD`: work item date.
+- `NNN`: zero-padded sequence number.
+- `short-kebab-title`: concise descriptive slug.
+
+Assign sequence numbers in historical order from git history so filename order
+matches execution order.
 
 Completed work remains visible from its proposal file. When a work item is
 completed, keep the proposal in `work/1_proposed/`, update its status to

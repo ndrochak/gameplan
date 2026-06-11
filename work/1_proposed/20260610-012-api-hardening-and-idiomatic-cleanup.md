@@ -7,7 +7,7 @@
 - Date: 2026-06-10
 - Status: completed
 - Approval Evidence: User said "make those 5 suggested changes" on 2026-06-10.
-- Completion Report: `work/2_completed/api-hardening-and-idiomatic-cleanup.md`
+- Completion Report: `work/2_completed/20260610-013-api-hardening-and-idiomatic-cleanup.md`
 
 ## Intent Reference
 

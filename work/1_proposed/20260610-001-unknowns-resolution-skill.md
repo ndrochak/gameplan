@@ -6,7 +6,7 @@
 - Owner: Product
 - Date: 2026-06-10
 - Status: completed
-- Completion Report: `work/2_completed/unknowns-resolution-skill.md`
+- Completion Report: `work/2_completed/20260610-002-unknowns-resolution-skill.md`
 
 ## Intent Reference
 

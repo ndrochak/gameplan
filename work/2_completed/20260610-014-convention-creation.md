@@ -5,7 +5,7 @@
 - Work Item: Convention Creation
 - Owner: Product
 - Completion Date: 2026-06-10
-- Proposal: `work/1_proposed/convention-creation.md`
+- Proposal: `work/1_proposed/20260610-011-convention-creation.md`
 - Intent: `1_intent/features/001-convention-creation.md`
 
 ## Outcome
