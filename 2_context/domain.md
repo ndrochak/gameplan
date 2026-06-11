@@ -65,3 +65,4 @@ convention time is spent playing rather than searching.
   window, not multiple windows.
 - Convention boundaries and capacity are organizer-defined and serve as source
   constraints for downstream scheduling behavior.
+- Convention timezone values must be valid IANA timezone identifiers.

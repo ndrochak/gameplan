@@ -56,6 +56,11 @@ that reads and writes PostgreSQL.
 - Keep frontend components focused on presentation and interaction; centralize
   business policy in Django services/modules.
 - Apply migrations for all schema evolution; avoid manual database drift.
+- For local backend validation, run with `DJANGO_DEBUG=true` (or explicitly set
+  `DJANGO_SECRET_KEY`) because production-mode defaults enforce secret key
+  presence.
+- For frontend behavior coverage, use Vitest with Testing Library under
+  `frontend/src/*.test.tsx` for form and interaction workflows.
 
 ## Architecture Risks
 
@@ -72,3 +77,8 @@ that reads and writes PostgreSQL.
   speed.
   Relevant expectations: stable API response contracts and compatibility shims
   in `3_expectations/engineering.md`.
+- Local command inconsistency across shells can cause false-negative validation
+  failures when required env vars are missing.
+  Relevant expectations: reliable local verification in
+  `3_expectations/testing.md` and operational consistency in
+  `3_expectations/engineering.md`.

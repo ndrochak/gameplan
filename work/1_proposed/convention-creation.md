@@ -5,10 +5,10 @@
 - Work Item: Convention Creation
 - Owner: Product
 - Date: 2026-06-10
-- Status: approved
+- Status: completed
 - Approval Evidence: User said "proposal is approved" on 2026-06-10 and
   directed implementation to begin with approach step 1.
-- Completion Report: `work/2_completed/convention-creation.md` when status is completed
+- Completion Report: `work/2_completed/convention-creation.md`
 
 ## Intent Reference
 
