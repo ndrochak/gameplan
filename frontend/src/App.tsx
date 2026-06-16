@@ -128,10 +128,6 @@ function validateForm(form: ConventionFormState): FieldErrors {
   return errors;
 }
 
-function hasErrors(errors: FieldErrors) {
-  return Object.keys(errors).length > 0;
-}
-
 function buildPayload(form: ConventionFormState) {
   return {
     name: form.name.trim(),
@@ -243,7 +239,7 @@ function App() {
     const validationErrors = validateForm(form);
     setErrors(validationErrors);
 
-    if (hasErrors(validationErrors)) {
+    if (Object.keys(validationErrors).length > 0) {
       return;
     }
 
