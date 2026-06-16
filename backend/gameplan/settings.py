@@ -7,14 +7,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def env_bool(name: str, default: bool = False) -> bool:
-    value = os.environ.get(name)
-    if value is None:
-        return default
-    return value.strip().lower() in {"1", "true", "yes", "on"}
-
-
-DEBUG = env_bool("DJANGO_DEBUG", False)
+DEBUG = os.environ.get("DJANGO_DEBUG", "").strip().lower() in {"1", "true", "yes", "on"}
 
 if os.environ.get("DJANGO_SECRET_KEY"):
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
