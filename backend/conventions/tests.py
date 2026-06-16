@@ -225,42 +225,6 @@ class ConventionApiTests(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn("maximum_attendance_capacity", response.json()["errors"])
 
-    def test_list_conventions_supports_offset_limit_pagination(self):
-        Convention.objects.create(**valid_convention_attrs(name="Alpha Con"))
-        Convention.objects.create(
-            **valid_convention_attrs(
-                name="Bravo Con",
-                start_date=date(2026, 9, 21),
-                end_date=date(2026, 9, 22),
-            )
-        )
-
-        response = self.client.get(reverse("convention_collection"), {"limit": "1", "offset": "1"})
-
-        self.assertEqual(response.status_code, 200)
-        body = response.json()
-        self.assertEqual(body["pagination"], {"offset": 1, "limit": 1, "total": 2})
-        self.assertEqual(len(body["conventions"]), 1)
-        self.assertEqual(body["conventions"][0]["name"], "Bravo Con")
-
-    def test_list_conventions_rejects_negative_offset(self):
-        response = self.client.get(reverse("convention_collection"), {"offset": "-1"})
-
-        self.assertEqual(response.status_code, 400)
-        self.assertIn("offset", response.json()["errors"])
-
-    def test_list_conventions_rejects_zero_limit(self):
-        response = self.client.get(reverse("convention_collection"), {"limit": "0"})
-
-        self.assertEqual(response.status_code, 400)
-        self.assertIn("limit", response.json()["errors"])
-
-    def test_list_conventions_rejects_limit_over_max(self):
-        response = self.client.get(reverse("convention_collection"), {"limit": "201"})
-
-        self.assertEqual(response.status_code, 400)
-        self.assertIn("limit", response.json()["errors"])
-
     def test_create_convention_rejects_unknown_fields(self):
         response = self.post_json(
             reverse("convention_collection"),

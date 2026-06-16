@@ -13,10 +13,6 @@ from django.views.decorators.http import require_http_methods
 from .forms import CONVENTION_FIELDS, ConventionWriteForm
 from .models import Convention
 
-DEFAULT_LIMIT = 50
-MAX_LIMIT = 200
-
-
 def serialize_convention(convention: Convention) -> dict[str, Any]:
     return {
         "id": convention.id,
@@ -95,64 +91,12 @@ def save_form(form: ConventionWriteForm) -> tuple[Convention | None, JsonRespons
     return convention, None
 
 
-def parse_non_negative_int(raw_value: str | None, *, field: str) -> tuple[int | None, JsonResponse | None]:
-    if raw_value is None:
-        return None, None
-
-    try:
-        value = int(raw_value)
-    except ValueError:
-        return None, error_response({field: ["Must be an integer."]})
-
-    if value < 0:
-        return None, error_response({field: ["Must be greater than or equal to zero."]})
-
-    return value, None
-
-
-def parse_pagination(request: HttpRequest) -> tuple[tuple[int, int] | None, JsonResponse | None]:
-    offset, error = parse_non_negative_int(request.GET.get("offset"), field="offset")
-    if error:
-        return None, error
-
-    limit, error = parse_non_negative_int(request.GET.get("limit"), field="limit")
-    if error:
-        return None, error
-
-    resolved_offset = offset if offset is not None else 0
-    resolved_limit = limit if limit is not None else DEFAULT_LIMIT
-
-    if resolved_limit == 0:
-        return None, error_response({"limit": ["Must be greater than zero."]})
-    if resolved_limit > MAX_LIMIT:
-        return None, error_response({"limit": [f"Must be less than or equal to {MAX_LIMIT}."]})
-
-    return (resolved_offset, resolved_limit), None
-
-
 @csrf_exempt
 @require_http_methods(["GET", "POST"])
 def convention_collection(request: HttpRequest) -> JsonResponse:
     if request.method == "GET":
-        pagination, error = parse_pagination(request)
-        if error:
-            return error
-
-        offset, limit = pagination or (0, DEFAULT_LIMIT)
-        queryset = Convention.objects.all()
-        total = queryset.count()
-        conventions = queryset[offset : offset + limit]
-
-        return JsonResponse(
-            {
-                "conventions": [serialize_convention(convention) for convention in conventions],
-                "pagination": {
-                    "offset": offset,
-                    "limit": limit,
-                    "total": total,
-                },
-            }
-        )
+        conventions = Convention.objects.all()
+        return JsonResponse({"conventions": [serialize_convention(c) for c in conventions]})
 
     payload, error = parse_json_body(request)
     if error:
