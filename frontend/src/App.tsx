@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import "./App.css";
 
 type Convention = {
@@ -170,10 +170,7 @@ function App() {
   const [statusMessage, setStatusMessage] = useState("");
   const [timezoneStatusMessage, setTimezoneStatusMessage] = useState("");
 
-  const selectedConvention = useMemo(
-    () => conventions.find((convention) => convention.id === selectedConventionId) ?? null,
-    [conventions, selectedConventionId],
-  );
+  const selectedConvention = conventions.find((c) => c.id === selectedConventionId) ?? null;
 
   async function loadConventions() {
     setIsLoading(true);
@@ -212,13 +209,10 @@ function App() {
     void loadTimezoneOptions();
   }, []);
 
-  const availableTimezoneOptions = useMemo(() => {
-    if (!form.timezone || timezoneOptions.includes(form.timezone)) {
-      return timezoneOptions;
-    }
-
-    return [form.timezone, ...timezoneOptions];
-  }, [form.timezone, timezoneOptions]);
+  const availableTimezoneOptions =
+    !form.timezone || timezoneOptions.includes(form.timezone)
+      ? timezoneOptions
+      : [form.timezone, ...timezoneOptions];
 
   function updateField(field: keyof ConventionFormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
