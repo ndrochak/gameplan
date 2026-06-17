@@ -129,14 +129,15 @@ class ConventionApiTests(TestCase):
         self.assertEqual(body["timezone"], "America/Los_Angeles")
         self.assertEqual(body["location"], "Portland Convention Center")
 
-    def test_timezone_options_returns_sorted_iana_identifiers(self):
+    def test_timezone_options_returns_curated_list(self):
         response = self.client.get(reverse("convention_timezone_options"))
 
         self.assertEqual(response.status_code, 200)
         timezones = response.json()["timezones"]
-        self.assertEqual(timezones, sorted(timezones))
         self.assertIn("America/Los_Angeles", timezones)
+        self.assertIn("Asia/Tokyo", timezones)
         self.assertIn("UTC", timezones)
+        self.assertLess(len(timezones), 50)
 
     def test_patch_convention_updates_selected_fields(self):
         convention = Convention.objects.create(**valid_convention_attrs())

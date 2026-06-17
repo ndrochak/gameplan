@@ -1,6 +1,5 @@
 import json
 from typing import Any
-from zoneinfo import available_timezones
 
 from django.db import IntegrityError
 from django.http import HttpRequest, JsonResponse
@@ -114,9 +113,42 @@ def convention_collection(request: HttpRequest) -> JsonResponse:
     return JsonResponse({"convention": serialize_convention(convention)}, status=201)
 
 
+TIMEZONE_OPTIONS = [
+    "Pacific/Pago_Pago",    # UTC-11
+    "Pacific/Honolulu",     # UTC-10
+    "America/Anchorage",    # UTC-9
+    "America/Los_Angeles",  # UTC-8
+    "America/Denver",       # UTC-7
+    "America/Chicago",      # UTC-6
+    "America/New_York",     # UTC-5
+    "America/Halifax",      # UTC-4
+    "America/Sao_Paulo",    # UTC-3
+    "Atlantic/Azores",      # UTC-1
+    "UTC",                  # UTC+0
+    "Europe/London",        # UTC+0
+    "Europe/Paris",         # UTC+1
+    "Europe/Athens",        # UTC+2
+    "Europe/Moscow",        # UTC+3
+    "Asia/Tehran",          # UTC+3:30
+    "Asia/Dubai",           # UTC+4
+    "Asia/Kabul",           # UTC+4:30
+    "Asia/Karachi",         # UTC+5
+    "Asia/Kolkata",         # UTC+5:30
+    "Asia/Kathmandu",       # UTC+5:45
+    "Asia/Dhaka",           # UTC+6
+    "Asia/Yangon",          # UTC+6:30
+    "Asia/Bangkok",         # UTC+7
+    "Asia/Shanghai",        # UTC+8
+    "Asia/Tokyo",           # UTC+9
+    "Australia/Darwin",     # UTC+9:30
+    "Australia/Sydney",     # UTC+10
+    "Pacific/Noumea",       # UTC+11
+    "Pacific/Auckland",     # UTC+12
+]
+
 @require_http_methods(["GET"])
 def timezone_options(_request: HttpRequest) -> JsonResponse:
-    return JsonResponse({"timezones": sorted(available_timezones())})
+    return JsonResponse({"timezones": TIMEZONE_OPTIONS})
 
 
 @csrf_exempt
