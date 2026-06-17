@@ -33,9 +33,10 @@ describe("App", () => {
       .mockResolvedValueOnce(makeJsonResponse({ timezones: timezoneOptions }));
 
     render(<App />);
+    const user = userEvent.setup();
 
     const createButton = await screen.findByRole("button", { name: "Create" });
-    await userEvent.click(createButton);
+    await user.click(createButton);
 
     expect(await screen.findByText("Name is required.")).toBeInTheDocument();
     expect(screen.getByText("Start date is required.")).toBeInTheDocument();

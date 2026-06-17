@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import json
 from typing import Any
 from zoneinfo import available_timezones
@@ -65,19 +63,16 @@ def form_errors_to_dict(form: ConventionWriteForm) -> dict[str, list[str]]:
     return errors
 
 
-KNOWN_CONSTRAINT_NAMES = {
-    "convention_end_date_on_or_after_start_date",
-    "convention_daily_close_after_open",
-    "convention_capacity_positive",
-}
-
-
 def save_form(form: ConventionWriteForm) -> tuple[Convention | None, JsonResponse | None]:
     try:
         convention = form.save()
     except IntegrityError as exc:
         error_message = str(exc).lower()
-        if any(constraint_name in error_message for constraint_name in KNOWN_CONSTRAINT_NAMES):
+        if any(name in error_message for name in {
+            "convention_end_date_on_or_after_start_date",
+            "convention_daily_close_after_open",
+            "convention_capacity_positive",
+        }):
             return None, error_response(
                 {
                     "non_field_errors": [

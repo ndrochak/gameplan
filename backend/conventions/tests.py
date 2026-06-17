@@ -1,8 +1,7 @@
-import json
 from datetime import date, time
 
 from django.core.exceptions import ValidationError
-from django.test import Client, TestCase
+from django.test import TestCase
 from django.urls import reverse
 
 from .models import Convention
@@ -88,34 +87,11 @@ class ConventionModelTests(TestCase):
 
 
 class ConventionApiTests(TestCase):
-    def setUp(self):
-        self.client = Client()
-
-    def post_json(self, url, payload):
-        return self.client.post(
-            url,
-            data=json.dumps(payload),
-            content_type="application/json",
-        )
-
-    def put_json(self, url, payload):
-        return self.client.put(
-            url,
-            data=json.dumps(payload),
-            content_type="application/json",
-        )
-
-    def patch_json(self, url, payload):
-        return self.client.patch(
-            url,
-            data=json.dumps(payload),
-            content_type="application/json",
-        )
-
     def test_create_convention_returns_stable_json_contract(self):
-        response = self.post_json(
+        response = self.client.post(
             reverse("convention_collection"),
             valid_convention_payload(),
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 201)
@@ -165,9 +141,10 @@ class ConventionApiTests(TestCase):
     def test_patch_convention_updates_selected_fields(self):
         convention = Convention.objects.create(**valid_convention_attrs())
 
-        response = self.patch_json(
+        response = self.client.patch(
             reverse("convention_detail", kwargs={"convention_id": convention.id}),
             {"name": "Updated Weekend", "maximum_attendance_capacity": 275},
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 200)
@@ -179,9 +156,10 @@ class ConventionApiTests(TestCase):
     def test_put_convention_requires_full_definition(self):
         convention = Convention.objects.create(**valid_convention_attrs())
 
-        response = self.put_json(
+        response = self.client.put(
             reverse("convention_detail", kwargs={"convention_id": convention.id}),
             {"name": "Incomplete"},
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 400)
@@ -190,13 +168,14 @@ class ConventionApiTests(TestCase):
         self.assertIn("maximum_attendance_capacity", errors)
 
     def test_create_convention_reports_boundary_errors_by_field(self):
-        response = self.post_json(
+        response = self.client.post(
             reverse("convention_collection"),
             valid_convention_payload(
                 end_date="2026-09-17",
                 daily_close_time="08:00:00",
                 maximum_attendance_capacity=0,
             ),
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 400)
@@ -217,18 +196,20 @@ class ConventionApiTests(TestCase):
         self.assertIn("body", response.json()["errors"])
 
     def test_create_convention_rejects_float_capacity(self):
-        response = self.post_json(
+        response = self.client.post(
             reverse("convention_collection"),
             valid_convention_payload(maximum_attendance_capacity=250.5),
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 400)
         self.assertIn("maximum_attendance_capacity", response.json()["errors"])
 
     def test_create_convention_rejects_unknown_fields(self):
-        response = self.post_json(
+        response = self.client.post(
             reverse("convention_collection"),
             valid_convention_payload(ticket_price="25.00"),
+            content_type="application/json",
         )
 
         self.assertEqual(response.status_code, 400)
