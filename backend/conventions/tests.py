@@ -134,9 +134,31 @@ class ConventionApiTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         timezones = response.json()["timezones"]
-        self.assertIn("America/Los_Angeles", timezones)
-        self.assertIn("Asia/Tokyo", timezones)
-        self.assertIn("UTC", timezones)
+        self.assertEqual(timezones[0], {"value": "UTC", "label": "UTC+0 UTC"})
+        self.assertEqual(timezones[1], {"value": "Europe/London", "label": "UTC+0 Europe/London"})
+        self.assertIn(
+            {"value": "America/Los_Angeles", "label": "UTC-8 America/Los_Angeles"},
+            timezones,
+        )
+        self.assertIn(
+            {"value": "Asia/Tokyo", "label": "UTC+9 Asia/Tokyo"},
+            timezones,
+        )
+        self.assertEqual(
+            timezones[-10:],
+            [
+                {"value": "Pacific/Pago_Pago", "label": "UTC-11 Pacific/Pago_Pago"},
+                {"value": "Pacific/Honolulu", "label": "UTC-10 Pacific/Honolulu"},
+                {"value": "America/Anchorage", "label": "UTC-9 America/Anchorage"},
+                {"value": "America/Los_Angeles", "label": "UTC-8 America/Los_Angeles"},
+                {"value": "America/Denver", "label": "UTC-7 America/Denver"},
+                {"value": "America/Chicago", "label": "UTC-6 America/Chicago"},
+                {"value": "America/New_York", "label": "UTC-5 America/New_York"},
+                {"value": "America/Halifax", "label": "UTC-4 America/Halifax"},
+                {"value": "America/Sao_Paulo", "label": "UTC-3 America/Sao_Paulo"},
+                {"value": "Atlantic/Azores", "label": "UTC-1 Atlantic/Azores"},
+            ],
+        )
         self.assertLess(len(timezones), 50)
 
     def test_patch_convention_updates_selected_fields(self):

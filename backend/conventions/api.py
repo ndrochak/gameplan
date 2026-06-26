@@ -114,36 +114,36 @@ def convention_collection(request: HttpRequest) -> JsonResponse:
 
 
 TIMEZONE_OPTIONS = [
-    "Pacific/Pago_Pago",    # UTC-11
-    "Pacific/Honolulu",     # UTC-10
-    "America/Anchorage",    # UTC-9
-    "America/Los_Angeles",  # UTC-8
-    "America/Denver",       # UTC-7
-    "America/Chicago",      # UTC-6
-    "America/New_York",     # UTC-5
-    "America/Halifax",      # UTC-4
-    "America/Sao_Paulo",    # UTC-3
-    "Atlantic/Azores",      # UTC-1
-    "UTC",                  # UTC+0
-    "Europe/London",        # UTC+0
-    "Europe/Paris",         # UTC+1
-    "Europe/Athens",        # UTC+2
-    "Europe/Moscow",        # UTC+3
-    "Asia/Tehran",          # UTC+3:30
-    "Asia/Dubai",           # UTC+4
-    "Asia/Kabul",           # UTC+4:30
-    "Asia/Karachi",         # UTC+5
-    "Asia/Kolkata",         # UTC+5:30
-    "Asia/Kathmandu",       # UTC+5:45
-    "Asia/Dhaka",           # UTC+6
-    "Asia/Yangon",          # UTC+6:30
-    "Asia/Bangkok",         # UTC+7
-    "Asia/Shanghai",        # UTC+8
-    "Asia/Tokyo",           # UTC+9
-    "Australia/Darwin",     # UTC+9:30
-    "Australia/Sydney",     # UTC+10
-    "Pacific/Noumea",       # UTC+11
-    "Pacific/Auckland",     # UTC+12
+    {"value": "UTC", "label": "UTC+0 UTC"},
+    {"value": "Europe/London", "label": "UTC+0 Europe/London"},
+    {"value": "Europe/Paris", "label": "UTC+1 Europe/Paris"},
+    {"value": "Europe/Athens", "label": "UTC+2 Europe/Athens"},
+    {"value": "Europe/Moscow", "label": "UTC+3 Europe/Moscow"},
+    {"value": "Asia/Tehran", "label": "UTC+3:30 Asia/Tehran"},
+    {"value": "Asia/Dubai", "label": "UTC+4 Asia/Dubai"},
+    {"value": "Asia/Kabul", "label": "UTC+4:30 Asia/Kabul"},
+    {"value": "Asia/Karachi", "label": "UTC+5 Asia/Karachi"},
+    {"value": "Asia/Kolkata", "label": "UTC+5:30 Asia/Kolkata"},
+    {"value": "Asia/Kathmandu", "label": "UTC+5:45 Asia/Kathmandu"},
+    {"value": "Asia/Dhaka", "label": "UTC+6 Asia/Dhaka"},
+    {"value": "Asia/Yangon", "label": "UTC+6:30 Asia/Yangon"},
+    {"value": "Asia/Bangkok", "label": "UTC+7 Asia/Bangkok"},
+    {"value": "Asia/Shanghai", "label": "UTC+8 Asia/Shanghai"},
+    {"value": "Asia/Tokyo", "label": "UTC+9 Asia/Tokyo"},
+    {"value": "Australia/Darwin", "label": "UTC+9:30 Australia/Darwin"},
+    {"value": "Australia/Sydney", "label": "UTC+10 Australia/Sydney"},
+    {"value": "Pacific/Noumea", "label": "UTC+11 Pacific/Noumea"},
+    {"value": "Pacific/Auckland", "label": "UTC+12 Pacific/Auckland"},
+    {"value": "Pacific/Pago_Pago", "label": "UTC-11 Pacific/Pago_Pago"},
+    {"value": "Pacific/Honolulu", "label": "UTC-10 Pacific/Honolulu"},
+    {"value": "America/Anchorage", "label": "UTC-9 America/Anchorage"},
+    {"value": "America/Los_Angeles", "label": "UTC-8 America/Los_Angeles"},
+    {"value": "America/Denver", "label": "UTC-7 America/Denver"},
+    {"value": "America/Chicago", "label": "UTC-6 America/Chicago"},
+    {"value": "America/New_York", "label": "UTC-5 America/New_York"},
+    {"value": "America/Halifax", "label": "UTC-4 America/Halifax"},
+    {"value": "America/Sao_Paulo", "label": "UTC-3 America/Sao_Paulo"},
+    {"value": "Atlantic/Azores", "label": "UTC-1 Atlantic/Azores"},
 ]
 
 @require_http_methods(["GET"])

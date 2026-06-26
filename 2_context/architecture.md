@@ -63,9 +63,11 @@ that reads and writes PostgreSQL.
   `frontend/src/*.test.tsx` for form and interaction workflows.
 - Convention timezone options are served by Django from a hardcoded curated
   list (`TIMEZONE_OPTIONS` in `conventions/api.py`) of one representative IANA
-  city per UTC offset. Django keeps final timezone validation server-authoritative
-  via `ZoneInfo`; the curated list governs what the UI presents, not what the
-  model accepts.
+  city per UTC offset. The endpoint returns option objects with explicit
+  `value` and `label` fields so the UI can display `UTC±offset` labels while
+  persisting the canonical timezone identifier.
+  Django keeps final timezone validation server-authoritative via `ZoneInfo`;
+  the curated list governs what the UI presents, not what the model accepts.
 
 ## Architecture Risks
 

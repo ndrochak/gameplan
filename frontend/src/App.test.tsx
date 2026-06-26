@@ -13,11 +13,11 @@ function makeJsonResponse(body: FetchJson, status = 200): Response {
 }
 
 const timezoneOptions = [
-  "America/Chicago",
-  "America/Denver",
-  "America/Los_Angeles",
-  "America/New_York",
-  "UTC",
+  { value: "America/Chicago", label: "UTC-6 America/Chicago" },
+  { value: "America/Denver", label: "UTC-7 America/Denver" },
+  { value: "America/Los_Angeles", label: "UTC-8 America/Los_Angeles" },
+  { value: "America/New_York", label: "UTC-5 America/New_York" },
+  { value: "UTC", label: "UTC+0 UTC" },
 ];
 
 afterEach(() => {

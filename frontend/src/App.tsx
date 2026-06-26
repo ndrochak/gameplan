@@ -26,6 +26,11 @@ type ConventionFormState = {
   maximum_attendance_capacity: string;
 };
 
+type TimezoneOption = {
+  value: string;
+  label: string;
+};
+
 type FieldErrors = Partial<Record<keyof ConventionFormState | "body" | "non_field_errors", string[]>>;
 
 const emptyForm: ConventionFormState = {
@@ -39,15 +44,15 @@ const emptyForm: ConventionFormState = {
   maximum_attendance_capacity: "",
 };
 
-const fallbackTimezoneOptions = [
-  "America/Los_Angeles",
-  "America/Denver",
-  "America/Chicago",
-  "America/New_York",
-  "America/Phoenix",
-  "Europe/London",
-  "Europe/Paris",
-  "UTC",
+const fallbackTimezoneOptions: TimezoneOption[] = [
+  { value: "America/Los_Angeles", label: "UTC-8 America/Los_Angeles" },
+  { value: "America/Denver", label: "UTC-7 America/Denver" },
+  { value: "America/Chicago", label: "UTC-6 America/Chicago" },
+  { value: "America/New_York", label: "UTC-5 America/New_York" },
+  { value: "America/Phoenix", label: "UTC-7 America/Phoenix" },
+  { value: "Europe/London", label: "UTC+0 Europe/London" },
+  { value: "Europe/Paris", label: "UTC+1 Europe/Paris" },
+  { value: "UTC", label: "UTC+0 UTC" },
 ];
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
@@ -156,7 +161,7 @@ function ErrorList({ id, errors }: { id: string; errors?: string[] }) {
 }
 
 function App() {
-  const [timezoneOptions, setTimezoneOptions] = useState<string[]>([]);
+  const [timezoneOptions, setTimezoneOptions] = useState<TimezoneOption[]>([]);
   const [conventions, setConventions] = useState<Convention[]>([]);
   const [form, setForm] = useState<ConventionFormState>(emptyForm);
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -192,7 +197,7 @@ function App() {
       if (!response.ok) {
         throw new Error("Unable to load timezone options.");
       }
-      const body = (await response.json()) as { timezones: string[] };
+      const body = (await response.json()) as { timezones: TimezoneOption[] };
       setTimezoneOptions(body.timezones);
     } catch {
       setTimezoneOptions(fallbackTimezoneOptions);
@@ -206,9 +211,9 @@ function App() {
   }, []);
 
   const availableTimezoneOptions =
-    !form.timezone || timezoneOptions.includes(form.timezone)
+    !form.timezone || timezoneOptions.some((option) => option.value === form.timezone)
       ? timezoneOptions
-      : [form.timezone, ...timezoneOptions];
+      : [{ value: form.timezone, label: form.timezone }, ...timezoneOptions];
 
   function updateField(field: keyof ConventionFormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -434,8 +439,8 @@ function App() {
                     onChange={(event) => updateField("timezone", event.target.value)}
                   >
                     {availableTimezoneOptions.map((timezone) => (
-                      <option key={timezone} value={timezone}>
-                        {timezone}
+                      <option key={timezone.value} value={timezone.value}>
+                        {timezone.label}
                       </option>
                     ))}
                   </select>
